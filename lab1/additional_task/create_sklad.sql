@@ -70,9 +70,16 @@ CREATE TABLE if not exists Поставка
 CREATE TABLE if not exists Заказ
 (
     ID_Заказчика int,
-    ID_Овоща      int,
+    ID_Овоща     int,
     PRIMARY KEY (ID_Заказчика, ID_Овоща),
     CONSTRAINT fk_Заказчик FOREIGN KEY (ID_Заказчика) REFERENCES Заказчик (ID),
     CONSTRAINT fk_Овощ FOREIGN KEY (ID_Овоща) REFERENCES Овощ (ID)
 );
 
+ALTER TABLE Поставка
+    ADD COLUMN if not exists Количесвто_овощей bigint,
+    ADD COLUMN if not exists Дата date;
+
+ALTER TABLE Заказ
+    ADD COLUMN if not exists Количесвто_овощей bigint,
+    ADD COLUMN if not exists Дата date;
