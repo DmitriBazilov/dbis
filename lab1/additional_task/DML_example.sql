@@ -14,6 +14,7 @@ select ("Телефон") from "Поставщик"
 select ("Наименование", "Цена") from "Овощ"
     where "Цена" > 100 ORDER BY "Цена";
 
+
 select * from "Поставка"
     where "Дата" > now();
 
