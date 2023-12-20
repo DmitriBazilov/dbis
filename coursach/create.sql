@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS studio (
     studio_name varchar(60)
 );
 
-CREATE TABLE IF NOT EXISTS user (
+CREATE TABLE IF NOT EXISTS users (
     id serial PRIMARY KEY,
     login varchar(30),
     password varchar(255),
@@ -50,10 +50,14 @@ CREATE TABLE IF NOT EXISTS film (
     id serial PRIMARY KEY,
     director_id int not null references director(id),
     writer_id int not null references writer(id),
+    release_date date not null,
     film_name varchar(60),
     film_description text,
     film_rating float DEFAULT 0.0
 );
+
+create index rating_index on film(film_rating);
+create index release_date_index on film(release_date);
 
 CREATE TABLE IF NOT EXISTS trailer (
     id serial PRIMARY KEY,
@@ -80,15 +84,15 @@ CREATE TABLE IF NOT EXISTS film_studio (
 );
 
 CREATE TABLE IF NOT EXISTS review (
-    user_id int not null references user(id),
+    user_id int not null references users(id),
     film_id int not null references film(id),
     review text,
-    rating float
+    rating float,
     PRIMARY KEY(user_id, film_id)
 );
 
 CREATE TABLE IF NOT EXISTS film_status_for_user (
-    user_id int not null references user(id),
+    user_id int not null references users(id),
     film_id int not null references film(id),
     status varchar(30),
     PRIMARY KEY(user_id, film_id)
@@ -102,7 +106,7 @@ CREATE TABLE IF NOT EXISTS film_genre (
 
 CREATE TABLE IF NOT EXISTS film_rating (
     film_id int not null references film(id),
-    aggregator_id int not null references aggregator(id),
+    aggregator_id int not null references rating_aggregator(id),
     rating float not null,
     PRIMARY KEY(film_id, aggregator_id)
 );
