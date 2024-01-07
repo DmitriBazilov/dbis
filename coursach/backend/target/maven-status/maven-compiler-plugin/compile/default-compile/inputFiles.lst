@@ -1,0 +1,8 @@
+D:\study\temp\weblab4\backend\src\main\java\com\dmitri\backend\repository\UserRepository.java
+D:\study\temp\weblab4\backend\src\main\java\com\dmitri\backend\controller\AuthController.java
+D:\study\temp\weblab4\backend\src\main\java\com\dmitri\backend\dto\UserDTO.java
+D:\study\temp\weblab4\backend\src\main\java\com\dmitri\backend\HelloResource.java
+D:\study\temp\weblab4\backend\src\main\java\com\dmitri\backend\model\User.java
+D:\study\temp\weblab4\backend\src\main\java\com\dmitri\backend\util\HibernateUtil.java
+D:\study\temp\weblab4\backend\src\main\java\com\dmitri\backend\filter\CORSFilter.java
+D:\study\temp\weblab4\backend\src\main\java\com\dmitri\backend\App.java

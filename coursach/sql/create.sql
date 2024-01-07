@@ -91,6 +91,8 @@ CREATE TABLE IF NOT EXISTS review (
     PRIMARY KEY(user_id, film_id)
 );
 
+create index on review(film_id);
+
 CREATE TABLE IF NOT EXISTS film_status_for_user (
     user_id int not null references users(id),
     film_id int not null references film(id),

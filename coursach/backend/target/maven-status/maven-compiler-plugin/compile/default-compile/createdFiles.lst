@@ -1,0 +1,15 @@
+com\dmitri\backend\dto\WriterDTO.class
+com\dmitri\backend\repository\FilmRepository.class
+com\dmitri\backend\controller\AuthController.class
+com\dmitri\backend\dto\ActorDTO.class
+com\dmitri\backend\dto\FilmWithInfo.class
+com\dmitri\backend\App.class
+com\dmitri\backend\controller\FilmController.class
+com\dmitri\backend\filter\CORSFilter.class
+com\dmitri\backend\model\User.class
+com\dmitri\backend\dto\StudioDTO.class
+com\dmitri\backend\dto\UserDTO.class
+com\dmitri\backend\HelloResource.class
+com\dmitri\backend\repository\UserRepository.class
+com\dmitri\backend\database\DatabaseConnector.class
+com\dmitri\backend\dto\DirectorDTO.class
