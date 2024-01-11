@@ -1,4 +1,4 @@
-package com.dmitri.backend.dto;
+package com.dmitri.backend.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,9 +9,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class StudioDTO {
+public class Review {
 
-    private int id;
-    private String country;
-    private String studioName;
+    private int filmId;
+    private String review;
+    private float rating;
+    private String login;
 }

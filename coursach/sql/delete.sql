@@ -15,3 +15,5 @@ drop table actor_film cascade;
 drop table film_genre cascade;
 drop table film_location cascade;
 drop table trailer cascade;
+
+drop function getpage(n integer, order_col text);

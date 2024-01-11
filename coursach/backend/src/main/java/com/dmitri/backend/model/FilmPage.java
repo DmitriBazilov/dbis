@@ -1,4 +1,4 @@
-package com.dmitri.backend.dto;
+package com.dmitri.backend.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class DirectorDTO {
+public class FilmPage {
 
-    private int id;
-    private String directorName;
+    private int page;
+    private String sortFactor;
 }

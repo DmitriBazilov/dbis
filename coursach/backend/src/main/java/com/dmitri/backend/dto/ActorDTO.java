@@ -12,6 +12,5 @@ import lombok.Setter;
 public class ActorDTO {
 
     private int id;
-    private String country;
     private String actorName;
 }

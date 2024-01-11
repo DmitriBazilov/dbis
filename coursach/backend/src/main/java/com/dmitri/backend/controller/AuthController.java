@@ -34,6 +34,7 @@ public class AuthController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response authorize(User data) {
         String error = "";
+        System.out.println(data.getLogin() + " " + data.getPassword());
         User user = userRepository.getUserByUsername(data.getLogin());
         if (user == null) {
             error = "Такого пользователя не существует.";

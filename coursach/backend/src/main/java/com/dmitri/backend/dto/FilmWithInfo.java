@@ -15,13 +15,13 @@ import java.util.List;
 public class FilmWithInfo {
 
     private int id;
-    private WriterDTO writer;
-    private DirectorDTO director;
-    private Date releaseDate;
     private String filmName;
     private String filmDescription;
     private double filmRating;
+    private Date releaseDate;
+    private WriterDTO writer;
+    private DirectorDTO director;
     private List<String> genreList;
     private List<ActorDTO> actorsList;
-    private List<StudioDTO> studioList;
+    private String studioName;
 }

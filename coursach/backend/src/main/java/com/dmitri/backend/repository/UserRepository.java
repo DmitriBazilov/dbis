@@ -35,21 +35,51 @@ public class UserRepository {
     public User getUserByUsername(String login) {
         try (Connection connection = databaseConnector.getConnection();
              PreparedStatement getUser = connection.prepareStatement(
-                     "select (login, name, password) from users where login = ? limit 1"
+                     "select login, name, password from users where login = ?"
              )
         ) {
             getUser.setString(1, login);
             ResultSet rs = getUser.executeQuery();
             if (rs.next()) {
+                System.out.println("WE ARE HERE");
                 return new User(
                         rs.getString(1),
                         rs.getString(2),
                         rs.getString(3)
                 );
             } else {
+                System.out.println("WE ARE NOT HERE");
                 return null;
             }
         } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            System.out.println("MB WE ARE HERE");
+            return null;
+        }
+    }
+
+    public UserDTO getUserDTOByUsername(String login) {
+        try (Connection connection = databaseConnector.getConnection();
+             PreparedStatement getUser = connection.prepareStatement(
+                     "select id, login, name, password, avatar from users where login = ?"
+             )
+        ) {
+            getUser.setString(1, login);
+            ResultSet rs = getUser.executeQuery();
+            if (rs.next()) {
+                int idx = 1;
+                UserDTO userDTO = new UserDTO();
+                userDTO.setId(rs.getInt(idx++));
+                userDTO.setLogin(rs.getString(idx++));
+                userDTO.setName(rs.getString(idx++));
+                userDTO.setPassword(rs.getString(idx++));
+                userDTO.setAvatar(rs.getString(idx++));
+                return userDTO;
+            } else {
+                return null;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
             return null;
         }
     }

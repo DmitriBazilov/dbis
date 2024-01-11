@@ -9,8 +9,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class DirectorDTO {
+public class ReviewDTO {
 
-    private int id;
-    private String directorName;
+    private int userId;
+    private int filmId;
+    private String review;
+    private float rating;
 }

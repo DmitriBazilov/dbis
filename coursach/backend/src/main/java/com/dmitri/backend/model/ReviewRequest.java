@@ -5,15 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.Serializable;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User implements Serializable {
+public class ReviewRequest {
 
+    private int filmId;
     private String login;
     private String password;
-    private String name;
+    private String review;
+    private float rating;
 }
